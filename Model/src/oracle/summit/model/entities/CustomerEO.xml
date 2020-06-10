@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CustomerEO"
+  Version="11.1.1.59.23"
+  DBObjectType="table"
+  DBObjectName="S_CUSTOMER"
+  AliasName="CustomerEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="oracle.summit.base.SummitEntityImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="Id"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    TableName="S_CUSTOMER"
+    PrimaryKey="true"
+    IsUpdateable="false"
+    RetrievedOnInsert="true"
+    Precision="7"
+    Scale="0">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Name"
+    IsNotNull="true"
+    Precision="50"
+    ColumnName="NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="S_CUSTOMER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Phone"
+    Precision="25"
+    ColumnName="PHONE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="S_CUSTOMER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Address"
+    Precision="400"
+    ColumnName="ADDRESS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="S_CUSTOMER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="400"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="City"
+    Precision="30"
+    ColumnName="CITY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="S_CUSTOMER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="State"
+    Precision="20"
+    ColumnName="STATE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="S_CUSTOMER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CountryId"
+    Precision="7"
+    Scale="0"
+    ColumnName="COUNTRY_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="S_CUSTOMER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ZipCode"
+    Precision="75"
+    ColumnName="ZIP_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="S_CUSTOMER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="75"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreditRatingId"
+    Precision="7"
+    Scale="0"
+    ColumnName="CREDIT_RATING_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="S_CUSTOMER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SalesRepId"
+    Precision="7"
+    Scale="0"
+    ColumnName="SALES_REP_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="S_CUSTOMER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Comments"
+    Precision="255"
+    ColumnName="COMMENTS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="S_CUSTOMER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="EmpEO"
+    Association="oracle.summit.model.entities.assoc.SSalesRepIdFkAssoc"
+    AssociationEnd="oracle.summit.model.entities.assoc.SSalesRepIdFkAssoc.EmpEO"
+    AssociationOtherEnd="oracle.summit.model.entities.assoc.SSalesRepIdFkAssoc.CustomerEO"
+    Type="oracle.summit.base.SummitEntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="OrdEO"
+    Association="oracle.summit.model.entities.assoc.SOrdCustomerIdFkAssoc"
+    AssociationEnd="oracle.summit.model.entities.assoc.SOrdCustomerIdFkAssoc.OrdEO"
+    AssociationOtherEnd="oracle.summit.model.entities.assoc.SOrdCustomerIdFkAssoc.CustomerEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="CreditRatingEO"
+    Association="oracle.summit.model.entities.assoc.SCustomerCreditRatingIdFkAssoc"
+    AssociationEnd="oracle.summit.model.entities.assoc.SCustomerCreditRatingIdFkAssoc.CreditRatingEO"
+    AssociationOtherEnd="oracle.summit.model.entities.assoc.SCustomerCreditRatingIdFkAssoc.CustomerEO"
+    Type="oracle.summit.base.SummitEntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="CountryEO"
+    Association="oracle.summit.model.entities.assoc.SCustomerCountryIdFkAssoc"
+    AssociationEnd="oracle.summit.model.entities.assoc.SCustomerCountryIdFkAssoc.CountryEO"
+    AssociationOtherEnd="oracle.summit.model.entities.assoc.SCustomerCountryIdFkAssoc.CustomerEO"
+    Type="oracle.summit.base.SummitEntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="SCustomerIdNn">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="S_CUSTOMER_ID_NN"/>
+      <Attr Name="_checkCondition" Value="ID IS NOT NULL"/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.summit.model.entities.CustomerEO.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SCustomerIdPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="S_CUSTOMER_ID_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.summit.model.entities.CustomerEO.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SCustomerNameNn">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="S_CUSTOMER_NAME_NN"/>
+      <Attr Name="_checkCondition" Value="NAME IS NOT NULL"/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.summit.model.entities.CustomerEO.Name"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0024068">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0024068"/>
+      <Attr Name="_checkCondition" Value='"ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.summit.model.entities.CustomerEO.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0024069">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0024069"/>
+      <Attr Name="_checkCondition" Value='"NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.summit.model.entities.CustomerEO.Name"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SCustomerCreditRatingFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="S_CREDIT_RATING_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="S_CUSTOMER_CREDIT_RATING_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.summit.model.entities.CustomerEO.CreditRatingId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SSalesRepIdFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="S_EMP_ID_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="S_SALES_REP_ID_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.summit.model.entities.CustomerEO.SalesRepId"/>
+    </AttrArray>
+  </Key>
+</Entity>

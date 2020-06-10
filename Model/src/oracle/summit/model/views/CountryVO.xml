@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CountryVO"
+  Version="11.1.1.59.23"
+  SelectList="CountryEO.ID, 
+       CountryEO.COUNTRY, 
+       CountryEO.REGION_ID"
+  FromList="S_COUNTRIES CountryEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  RowClass="oracle.summit.base.SummitViewRowImpl"
+  ComponentClass="oracle.summit.base.SummitViewObjectImpl"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="CountryEO"
+    Entity="oracle.summit.model.entities.CountryEO"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="CountryEO"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Country"
+    IsUnique="true"
+    PrecisionRule="true"
+    EntityAttrName="Country"
+    EntityUsage="CountryEO"
+    AliasName="COUNTRY"/>
+  <ViewAttribute
+    Name="RegionId"
+    PrecisionRule="true"
+    EntityAttrName="RegionId"
+    EntityUsage="CountryEO"
+    AliasName="REGION_ID"/>
+  <ViewLinkAccessor
+    Name="CustomerVO"
+    ViewLink="oracle.summit.model.views.links.CustomerCountryIdFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="WarehouseVO"
+    ViewLink="oracle.summit.model.views.links.WarehouseCountryIdFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>
