@@ -11,7 +11,7 @@
                          id="pt1">
           <f:facet name="center">
             <af:panelTabbed id="pt2">
-              <af:showDetailItem text="Welcome" id="sdi1"/>
+              <af:showDetailItem text="Hello" id="sdi1"/>
               <af:showDetailItem text="Summit Management 2020" id="sdi2" disclosed="true"
                                  stretchChildren="first">
                 <af:region value="#{bindings.customertaskflowdefinition1.regionModel}"
